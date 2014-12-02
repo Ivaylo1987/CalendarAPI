@@ -286,6 +286,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CalendarAPI.Google\CalendarAPI.Google.csproj">
+      <Project>{5534e100-9e85-478c-91e9-aa4ca9273a4d}</Project>
+      <Name>CalendarAPI.Google</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CalendarAPI.Infrastructure\CalendarAPI.Infrastructure.csproj">
       <Project>{2dc380c5-445e-4816-8f16-47c127ef5ede}</Project>
       <Name>CalendarAPI.Infrastructure</Name>

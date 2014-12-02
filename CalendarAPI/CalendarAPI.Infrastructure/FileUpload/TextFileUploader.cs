@@ -1,6 +1,6 @@
-﻿namespace CalendarAPI.Infrastructure
+﻿namespace CalendarAPI.Infrastructure.FileUpload
 {
-    using CalendarAPI.Infrastructure.Contracts;
+    using CalendarAPI.Infrastructure.FileUpload.Contracts;
     using System.IO;
     using System.Web;
 

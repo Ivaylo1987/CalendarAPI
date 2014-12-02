@@ -1,4 +1,4 @@
-﻿namespace CalendarAPI.Infrastructure.Contracts
+﻿namespace CalendarAPI.Infrastructure.FileUpload.Contracts
 {
     using System.Web;
 
