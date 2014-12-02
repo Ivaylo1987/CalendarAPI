@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarAPI.Web", "CalendarAPI.Web\CalendarAPI.Web.csproj", "{A97463C2-76E3-4A0F-865F-7A69F4AC2BC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarAPI.Infrastructure", "CalendarAPI.Infrastructure\CalendarAPI.Infrastructure.csproj", "{2DC380C5-445E-4816-8F16-47C127EF5EDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A97463C2-76E3-4A0F-865F-7A69F4AC2BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A97463C2-76E3-4A0F-865F-7A69F4AC2BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A97463C2-76E3-4A0F-865F-7A69F4AC2BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC380C5-445E-4816-8F16-47C127EF5EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC380C5-445E-4816-8F16-47C127EF5EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC380C5-445E-4816-8F16-47C127EF5EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC380C5-445E-4816-8F16-47C127EF5EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

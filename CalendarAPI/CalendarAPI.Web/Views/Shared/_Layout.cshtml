@@ -28,6 +28,26 @@
         </div>
     </div>
     <div class="container body-content">
+
+        <div class="row">
+            <div class="col-md-4 pull-right">
+                @if (this.TempData["successMessage"] != null)
+                {
+                    <div class="alert alert-dismissable alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>@TempData["successMessage"]</strong>
+                    </div>
+                }
+                @if (this.TempData["errorMessage"] != null)
+                {
+                    <div class="alert alert-dismissable alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>@TempData["errorMessage"]</strong>
+                    </div>
+                }
+            </div>
+        </div>
+
         @RenderBody()
         <hr />
         <footer>
