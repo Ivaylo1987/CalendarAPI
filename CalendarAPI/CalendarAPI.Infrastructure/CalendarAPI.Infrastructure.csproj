@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalendarServiceManager\CalendarServiceManager.cs" />
+    <Compile Include="CalendarServiceManager\CalendarServiceManagerBase.cs" />
     <Compile Include="FileUpload\Contracts\IFileManager.cs" />
     <Compile Include="FileUpload\TextFileManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,7 +5,7 @@
 
     public interface IFileManager
     {
-        void SaveFile(Stream inputStream, string serverPath, string fileName);
+        void SaveFile(Stream inputStream, string filePath);
         StreamReader GetFile(string filePath);
     }
 }

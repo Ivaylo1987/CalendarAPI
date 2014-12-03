@@ -2,26 +2,34 @@
 {
     using CalendarAPI.GoogleServices;
     using CalendarAPI.GoogleServices.Contracts;
+    using CalendarAPI.Infrastructure.FileUpload;
+    using CalendarAPI.Infrastructure.FileUpload.Contracts;
     using Google.Apis.Calendar.v3;
+    using Google.Apis.Calendar.v3.Data;
+    using System.Linq;
 
-    public class CalendarServiceManager
+    public class CalendarServiceManager : CalendarServiceManagerBase
     {
-        private CalendarService calendarService;
+        private const string CalendarSummery = "Service Owned Calendar";
 
         // poor man's IoC - use if no dependency container is available
         public CalendarServiceManager()
-            : this(new CalendarServiceInitializer())
+            : base(new CalendarServiceInitializer(), new TextFileManager())
         {
         }
 
-        public CalendarServiceManager(ICalendarServiceInitializer calendarServiceInitializer)
+        public void CreateBirhtDayEvents(string filePath, string email)
         {
-            this.calendarService = calendarServiceInitializer.GetCalendarService();
-        }
+            var calendarId = this.GetCalendarId(CalendarSummery);
 
-        public void CreateBirhtDayEvents(string filePath)
-        {
+            var isEmailInCalendarAcl = this.CheckIfEmailIsInCalendar(calendarId, email);
 
+            if (!isEmailInCalendarAcl)
+            {
+                this.AddEmailToCalendar(calendarId, email);
+            }
+
+            var fileStream = this.FileManager.GetFile(filePath);
         }
     }
 }

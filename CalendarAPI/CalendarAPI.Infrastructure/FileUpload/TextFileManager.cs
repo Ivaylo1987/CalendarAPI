@@ -6,9 +6,8 @@
 
     public class TextFileManager : IFileManager
     {
-        public void SaveFile(Stream inputStream, string serverPath, string fileName)
+        public void SaveFile(Stream inputStream, string filePath)
         {
-            var filePath = Path.Combine(serverPath, fileName);
             using (var fileStream = File.Create(filePath))
             {
                 inputStream.CopyTo(fileStream);

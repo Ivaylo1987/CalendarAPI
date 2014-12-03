@@ -4,6 +4,7 @@
     using CalendarAPI.Infrastructure.FileUpload;
     using CalendarAPI.Infrastructure.FileUpload.Contracts;
     using CalendarAPI.Web.Models.Calendar;
+    using System.IO;
     using System.Web.Configuration;
     using System.Web.Mvc;
 
@@ -41,11 +42,13 @@
             {
                 var fileVirtualDirectory = WebConfigurationManager.AppSettings["TextFilesVirtualDirectory"];
                 var directoryPath = Server.MapPath(fileVirtualDirectory);
+                var filePath = Path.Combine(directoryPath, model.UploadedFile.FileName);
 
-                this.fileUploader.SaveFile(model.UploadedFile.InputStream, directoryPath, model.UploadedFile.FileName);
+                this.fileUploader.SaveFile(model.UploadedFile.InputStream, filePath);
                 TempData["successMessage"] = "File was succesfully uploaded.";
 
-                this.calendarServiceManager.CreateBirhtDayEvents("");
+
+                this.calendarServiceManager.CreateBirhtDayEvents(filePath, model.Email);
             }
 
             return RedirectToAction("Submit", "Calendar");
