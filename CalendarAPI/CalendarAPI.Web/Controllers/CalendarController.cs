@@ -49,6 +49,7 @@
 
 
                 this.calendarServiceManager.CreateBirhtDayEvents(filePath, model.Email);
+                TempData["successMessage"] += " Events were successfully added.";
             }
 
             return RedirectToAction("Submit", "Calendar");

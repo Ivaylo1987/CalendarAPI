@@ -2,7 +2,6 @@
 {
     using CalendarAPI.Infrastructure.FileUpload.Contracts;
     using System.IO;
-    using System.Web;
 
     public class TextFileManager : IFileManager
     {

@@ -21,7 +21,7 @@
         protected string GetCalendarId(string calendarSummery)
         {
             var calendarId = string.Empty;
-            var calendarList = CalendarService.CalendarList.List().Execute().Items;
+            var calendarList = this.CalendarService.CalendarList.List().Execute().Items;
 
             if (calendarList.Count <= 0)
             {
