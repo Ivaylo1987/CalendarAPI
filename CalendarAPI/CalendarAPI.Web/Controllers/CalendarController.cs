@@ -1,26 +1,28 @@
-﻿namespace CalendarAPI.Web.Controllers
-{
-    using CalendarAPI.Google;
-    using CalendarAPI.Infrastructure.FileUpload;
-    using CalendarAPI.Infrastructure.FileUpload.Contracts;
-    using CalendarAPI.Web.Models.Calendar;
-    using System.IO;
-    using System.Web.Configuration;
-    using System.Web.Mvc;
+﻿using CalendarAPI.Google;
+using CalendarAPI.Infrastructure.FileUpload;
+using CalendarAPI.Infrastructure.FileUpload.Contracts;
+using CalendarAPI.Web.Models.Calendar;
+using Google.Apis.Calendar.v3;
+using System.Web.Configuration;
+using System.Web.Mvc;
 
+namespace CalendarAPI.Web.Controllers
+{
     public class CalendarController : Controller
     {
-        private IFileUploader fileUploader;
+        private IFileManager fileUploader;
+        private CalendarService calendarService;
 
         // poor man's IoC use if no dependency container is available
         public CalendarController()
-            : this(new TextFileUploader())
+            : this(new TextFileManager(), new CalendarServiceInitializer().GetCalendarService())
         {
         }
 
-        public CalendarController(IFileUploader fileUploader)
+        public CalendarController(IFileManager fileUploader, CalendarService calendarService)
         {
             this.fileUploader = fileUploader;
+            this.calendarService = calendarService;
         }
 
         public ActionResult Submit()
@@ -39,13 +41,10 @@
             else
             {
                 var fileVirtualDirectory = WebConfigurationManager.AppSettings["TextFilesVirtualDirectory"];
-                var serverPath = Server.MapPath(fileVirtualDirectory);
+                var directoryPath = Server.MapPath(fileVirtualDirectory);
 
-                this.fileUploader.SaveFile(model.UploadedFile, serverPath);
+                this.fileUploader.SaveFile(model.UploadedFile.InputStream, directoryPath, model.UploadedFile.FileName);
                 TempData["successMessage"] = "File was succesfully uploaded.";
-
-                // testing the service
-                var calendarService = new CalendarServiceInitializer().GetCalendarService();
             }
 
             return RedirectToAction("Submit", "Calendar");
