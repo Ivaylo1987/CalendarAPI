@@ -71,7 +71,7 @@
         {
             AclRule userRule = new AclRule()
             {
-                Role = "reder",
+                Role = "reader",
                 Scope = new AclRule.ScopeData()
                 {
                     Type = "user",

@@ -45,11 +45,9 @@
                 var filePath = Path.Combine(directoryPath, model.UploadedFile.FileName);
 
                 this.fileUploader.SaveFile(model.UploadedFile.InputStream, filePath);
-                TempData["successMessage"] = "File was succesfully uploaded.";
-
 
                 this.calendarServiceManager.CreateBirhtDayEvents(filePath, model.Email);
-                TempData["successMessage"] += " Events were successfully added.";
+                TempData["successMessage"] += "\nEvents were successfully added.";
             }
 
             return RedirectToAction("Submit", "Calendar");
