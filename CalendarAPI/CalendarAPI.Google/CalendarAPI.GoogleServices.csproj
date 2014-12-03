@@ -7,7 +7,7 @@
     <ProjectGuid>{5534E100-9E85-478C-91E9-AA4CA9273A4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CalendarAPI.Google</RootNamespace>
+    <RootNamespace>CalendarAPI.GoogleServices</RootNamespace>
     <AssemblyName>CalendarAPI.Google</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalendarServiceInitializer.cs" />
+    <Compile Include="Contracts\ICalendarServiceInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

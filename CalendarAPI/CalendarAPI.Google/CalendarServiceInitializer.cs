@@ -1,13 +1,14 @@
-﻿using Google.Apis.Auth.OAuth2;
-using Google.Apis.Calendar.v3;
-using Google.Apis.Services;
-using System;
-using System.Security.Cryptography.X509Certificates;
-using System.IO;
-
-namespace CalendarAPI.Google
+﻿namespace CalendarAPI.GoogleServices
 {
-    public class CalendarServiceInitializer
+    using Google.Apis.Auth.OAuth2;
+    using Google.Apis.Calendar.v3;
+    using Google.Apis.Services;
+    using System;
+    using System.Security.Cryptography.X509Certificates;
+    using System.IO;
+    using CalendarAPI.GoogleServices.Contracts;
+
+    public class CalendarServiceInitializer : ICalendarServiceInitializer
     {
         private const string ServiceAccountEmail = "847753983802-6qbjred3ht7beabof68s9dapuq94912i@developer.gserviceaccount.com";
         private const string GoogleApplicationName = "CalendarApiTest";

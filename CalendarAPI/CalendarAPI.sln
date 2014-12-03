@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarAPI.Web", "Calendar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarAPI.Infrastructure", "CalendarAPI.Infrastructure\CalendarAPI.Infrastructure.csproj", "{2DC380C5-445E-4816-8F16-47C127EF5EDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarAPI.Google", "CalendarAPI.Google\CalendarAPI.Google.csproj", "{5534E100-9E85-478C-91E9-AA4CA9273A4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarAPI.GoogleServices", "CalendarAPI.Google\CalendarAPI.GoogleServices.csproj", "{5534E100-9E85-478C-91E9-AA4CA9273A4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
